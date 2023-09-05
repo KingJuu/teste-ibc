@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste IBC - Gato</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./icon.png">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
     </style>
@@ -12,10 +14,10 @@
 <body>
     <div class="section-1">
         <header id="header-gato">   
-            <img src="gato.svg" alt="ilustração de lobo">
+            <img src="./gato.svg" alt="ilustração de lobo">
             <div class="titulo">
                 <h1>GATO</h1>
-                <h3>Seus resultados: n%</h3>
+                <h3 id="porcentagem">Seus resultados: n%</h3>
             </div>
             
         </header> 
@@ -30,26 +32,26 @@
     </div>
     <div class="caracteristicas">
         <div class="box">
-            <img src="strenghts-g.svg">
+            <img src="./strenghts-g.svg">
             <p><h3>PONTOS FORTES: </h3>
                 Trabalhar em equipe, Comunicação aberta
             </p>
         </div>
         <div class="box">
-            <img src="weakness-g.svg">
+            <img src="./weakness-g.svg">
             <p><h3>PONTOS DE MELHORIA: </h3>
                 Esconder conflitos, Manipular através dos sentimentos
             </p>
         </div>
         <div class="box">
-            <img src="values-g.svg">
+            <img src="./values-g.svg">
             <p><h3>VALORES: </h3>
                 Felicidade e Igualdade
             </p>
         </div>
     </div>
     <div class="fim">
-        <button id="retornar-gato">VOLTAR</button>
+        <button id="retornar-gato" onclick="window.open('./questionario.html')">VOLTAR</button>
         <div class="resultados">   
             <h3>RESULTADO COMPLETO:</h3>
             <a href="index-l.html">Lobo: n% ></a> 
@@ -59,5 +61,17 @@
         </div>
 
     </div>
+    <script>
+        document.querySelector('#porcentagem').innerHTML = `
+        <h3>Seus resultados: ${localStorage.getItem('porcGato')}</h3>
+        ` 
+        document.querySelector('.resultados').innerHTML = ` 
+        <h3>RESULTADO COMPLETO:</h3>
+            <a href="index-l.html">Lobo: ${localStorage.getItem('porcLobo')} ></a> 
+            <a href="index-g.html">Gato: ${localStorage.getItem('porcGato')} ></a> 
+            <a href="index-t.html">Tubarão: ${localStorage.getItem('porcTubarao')} ></a> 
+            <a href="index-a.html">Águia: ${localStorage.getItem('porcAguia')} ></a>
+        `
+    </script>
 </body>
 </html>

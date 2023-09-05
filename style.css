@@ -65,6 +65,11 @@
     padding: 20px 0px;
 }
 
+img{
+    width:400px;
+    height: auto;
+}
+
 .titulo{
     display: flex;
     flex-direction: column;
@@ -179,7 +184,19 @@ a{
     padding: 10px;
 }
 
-#retornar :hover{
+#retornar-gato :hover{
+    cursor:pointer;
+}
+
+#retornar-lobo :hover{
+    cursor:pointer;
+}
+
+#retornar-tub :hover{
+    cursor:pointer;
+}
+
+#retornar-aguia :hover{
     cursor:pointer;
 }
 
